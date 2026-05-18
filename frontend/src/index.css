@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { @apply text-slate-100; }
+.light body { @apply text-slate-900; }
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-white/10 border border-white/15 shadow-xl rounded-2xl;
+  }
+  .light .glass {
+    @apply bg-white/70 border-slate-200 text-slate-900;
+  }
+  .input {
+    @apply w-full rounded-xl bg-white/10 border border-white/15 px-4 py-2.5 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/30 placeholder-slate-400;
+  }
+  .light .input {
+    @apply bg-white border-slate-300 text-slate-900 placeholder-slate-400;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-medium transition active:scale-[0.98];
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-indigo-500 to-fuchsia-500 hover:from-indigo-400 hover:to-fuchsia-400 text-white shadow-lg shadow-indigo-500/20;
+  }
+  .btn-ghost {
+    @apply btn bg-white/10 hover:bg-white/15 border border-white/15;
+  }
+  .light .btn-ghost {
+    @apply bg-white hover:bg-slate-50 border-slate-200 text-slate-900;
+  }
+  .chip {
+    @apply inline-block text-xs px-2 py-1 rounded-full bg-white/10 border border-white/15 mr-1 mb-1;
+  }
+  .light .chip { @apply bg-slate-100 border-slate-200 text-slate-700; }
+}
