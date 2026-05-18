@@ -18,7 +18,7 @@ export default function Login() {
     try {
       await login(email, password);
       toast.success('Welcome back');
-      nav(loc.state?.from?.pathname || '/', { replace: true });
+      nav('/dashboard', { replace: true });
     } catch (e) { toast.error(e?.response?.data?.error || 'Login failed'); }
     finally { setBusy(false); }
   }
